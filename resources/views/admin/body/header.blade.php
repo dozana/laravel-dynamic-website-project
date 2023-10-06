@@ -3,7 +3,7 @@
         <div class="d-flex">
             <!-- LOGO -->
             <div class="navbar-brand-box">
-                <a href="index.html" class="logo logo-dark">
+                <a href="#" class="logo logo-dark">
                     <span class="logo-sm">
                         <img src="{{ asset('/backend/assets/images/logo-sm.png') }}" alt="logo-sm" height="22">
                     </span>
@@ -11,7 +11,7 @@
                         <img src="{{ asset('/backend/assets/images/logo-dark.png') }}" alt="logo-dark" height="20">
                     </span>
                 </a>
-                <a href="index.html" class="logo logo-light">
+                <a href="#" class="logo logo-light">
                     <span class="logo-sm">
                         <img src="{{ asset('/backend/assets/images/logo-sm.png') }}" alt="logo-sm-light" height="22">
                     </span>
@@ -68,12 +68,17 @@
                 </button>
             </div>
 
+            @php
+            $id = Auth::user()->id;
+            $adminData = App\Models\User::find($id);
+            @endphp
+
             <div class="dropdown d-inline-block user-dropdown">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{{ asset('/backend/assets/images/users/avatar-1.png') }}"
+                    <img class="rounded-circle header-profile-user" src="{{ (!empty($adminData->profile_image)) ? url('upload/admin_images/'.$adminData->profile_image) : url('upload/no_image.jpg')  }}"
                          alt="Header Avatar">
-                    <span class="d-none d-xl-inline-block ms-1">Levan</span>
+                    <span class="d-none d-xl-inline-block ms-1">{{ $adminData->name }}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
