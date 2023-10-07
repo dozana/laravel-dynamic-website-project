@@ -14,7 +14,13 @@ class AdminController extends Controller
         Auth::guard('web')->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/login');
+
+        $notification = [
+            'message' => 'User Logout Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect('/login')->with($notification);
     }
 
     public function profile()
@@ -54,7 +60,7 @@ class AdminController extends Controller
 
         $notification = [
             'message' => 'Admin Profile Updated Successfully',
-            'alert-type' => 'success'
+            'alert-type' => 'info'
         ];
 
         return redirect()->route('admin.profile')->with($notification);
