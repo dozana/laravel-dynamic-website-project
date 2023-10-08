@@ -9,7 +9,7 @@
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!-- App favicon -->
-{{--    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">--}}
+    <link rel="shortcut icon" href="{{ asset('backend/assets/images/favicon.ico') }}">
 
     <!-- jquery.vectormap css -->
     <link href="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.css') }}" rel="stylesheet" type="text/css" />
@@ -29,6 +29,7 @@
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
+    @yield('styles')
 </head>
 
 <body data-topbar="dark">
@@ -72,7 +73,7 @@
 
 
 <!-- apexcharts -->
-<script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>
+{{--<script src="{{ asset('backend/assets/libs/apexcharts/apexcharts.min.js') }}"></script>--}}
 
 <!-- jquery.vectormap map -->
 <script src="{{ asset('backend/assets/libs/admin-resources/jquery.vectormap/jquery-jvectormap-1.2.2.min.js') }}"></script>
@@ -116,6 +117,10 @@
     }
     @endif
 </script>
+
+
+@yield('scripts')
+
 
 </body>
 </html>

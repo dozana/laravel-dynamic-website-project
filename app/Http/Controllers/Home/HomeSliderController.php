@@ -52,6 +52,6 @@ class HomeSliderController extends Controller
             ];
 
             return redirect()->back()->with($notification);
-        } // end Else
-    } // End Method
+        }
+    }
 }
