@@ -49,13 +49,8 @@ Route::controller(AboutController::class)->group(function () {
     Route::get('/about', 'homeAbout')->name('home.about');
 
     Route::get('/about/multi/image', 'aboutMultiImage')->name('about.multi.image');
+    Route::post('/store/multi/image', 'storeMultiImage')->name('store.multi.image');
 });
-
-
-
-
-
-
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

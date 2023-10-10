@@ -32,7 +32,7 @@
 
                             <h4 class="card-title">Add Multi Image</h4>
 
-                            <form method="post" action="{{ route('update.about') }}" enctype="multipart/form-data">
+                            <form method="post" action="{{ route('store.multi.image') }}" enctype="multipart/form-data">
                                 @csrf
 
                                 <input type="hidden" name="id" value="">
@@ -41,7 +41,7 @@
                                     <label for="multi_image" class="col-sm-2 col-form-label">About Multi Image</label>
                                     <div class="col-sm-10">
                                         <img id="showImage" class="rounded avatar-md mb-3" src="{{ url('upload/no_image.jpg')  }}" alt="">
-                                        <input name="multi_image" id="image" class="form-control" type="file">
+                                        <input name="multi_image[]" id="image" multiple class="form-control" type="file">
                                     </div>
                                 </div>
                                 <!-- end row -->
