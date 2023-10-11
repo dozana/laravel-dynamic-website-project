@@ -50,6 +50,7 @@ Route::controller(AboutController::class)->group(function () {
 
     Route::get('/about/multi/image', 'aboutMultiImage')->name('about.multi.image');
     Route::post('/store/multi/image', 'storeMultiImage')->name('store.multi.image');
+    Route::get('/all/multi/image', 'allMultiImage')->name('all.multi.image');
 });
 
 Route::middleware('auth')->group(function () {
