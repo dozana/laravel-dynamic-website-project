@@ -26,6 +26,15 @@
 
     <!-- Datatable init js -->
     <script src="{{ asset('backend/assets/js/pages/datatables.init.js') }}"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
+    <script src="{{ asset('backend/assets/js/code.js') }}"></script>
+
+
 @endsection
 
 @section('admin')
@@ -63,7 +72,7 @@
                                             <td><img src="{{ asset($item->multi_image) }}" style="width: 60px; height: 50px" alt=""></td>
                                             <td>
                                                 <a href="{{ route('edit.multi.image', $item->id) }}" class="btn btn-info btn-sm" title="Edit Data"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="btn btn-danger btn-sm" title="Delete Data"><i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{ route('delete.multi.image', $item->id) }}" class="btn btn-danger btn-sm" title="Delete Data" id="delete"><i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
