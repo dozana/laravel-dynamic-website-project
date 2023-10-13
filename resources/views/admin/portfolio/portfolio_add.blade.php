@@ -39,6 +39,9 @@
                                     <label for="portfolio_name" class="col-sm-2 col-form-label">Portfolio Name</label>
                                     <div class="col-sm-10">
                                         <input name="portfolio_name" id="portfolio_name" class="form-control" type="text">
+                                        @error('portfolio_name')
+                                            <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- end row -->
@@ -47,6 +50,9 @@
                                     <label for="portfolio_title" class="col-sm-2 col-form-label">Portfolio Title</label>
                                     <div class="col-sm-10">
                                         <input name="portfolio_title" id="portfolio_title" class="form-control" type="text">
+                                        @error('portfolio_title')
+                                        <span class="text-danger">{{ $message }}</span>
+                                        @enderror
                                     </div>
                                 </div>
                                 <!-- end row -->
