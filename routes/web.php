@@ -76,6 +76,8 @@ Route::controller(PortfolioController::class)->group(callback: function () {
 // Blog Category All Route
 Route::controller(BlogCategoryController::class)->group(function () {
     Route::get('/all/blog/category', 'allBlogCategory')->name('all.blog.category');
+    Route::get('/add/blog/category', 'addBlogCategory')->name('add.blog.category');
+    Route::post('/store/blog/category', 'storeBlogCategory')->name('store.blog.category');
 });
 
 Route::middleware('auth')->group(function () {
