@@ -1,11 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
+use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Home\HomeSliderController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +71,11 @@ Route::controller(PortfolioController::class)->group(callback: function () {
     Route::get('/delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
 
     Route::get('/portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
+});
+
+// Blog Category All Route
+Route::controller(BlogCategoryController::class)->group(function () {
+    Route::get('/all/blog/category', 'allBlogCategory')->name('all.blog.category');
 });
 
 Route::middleware('auth')->group(function () {
