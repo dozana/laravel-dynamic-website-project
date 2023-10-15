@@ -72,4 +72,6 @@ class BlogCategoryController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+
 }
