@@ -13,14 +13,14 @@ class BlogController extends Controller
 {
     public function allBlog()
     {
-        $blog = Blog::latest()->get();
-        return view('admin.blog.blog_all', compact('blog'));
+        $blogs = Blog::latest()->get();
+        return view('admin.blogs.blogs_all', compact('blogs'));
     }
 
     public function addBlog()
     {
         $categories = BlogCategory::orderBy('blog_category','ASC')->get();
-        return view('admin.blog.blog_add', compact('categories'));
+        return view('admin.blogs.blogs_add', compact('categories'));
     }
 
     public function storeBlog(Request $request)
@@ -55,5 +55,12 @@ class BlogController extends Controller
         ];
 
         return redirect()->route('all.blog')->with($notification);
+    }
+
+    public function editBlog($id)
+    {
+        $blogs = Blog::findOrFail($id);
+        $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+        return view('admin.blogs.blogs_edit', compact('blogs','categories'));
     }
 }
