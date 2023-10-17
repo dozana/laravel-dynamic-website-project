@@ -91,6 +91,7 @@ Route::controller(BlogController::class)->group(function () {
     Route::post('/store/blog', 'storeBlog')->name('store.blog');
     Route::get('/edit/blog/{id}', 'editBlog')->name('edit.blog');
     Route::post('/update/blog/{id}', 'updateBlog')->name('update.blog');
+    Route::get('/delete/blog/{id}', 'deleteBlog')->name('delete.blog');
 });
 
 Route::middleware('auth')->group(function () {
