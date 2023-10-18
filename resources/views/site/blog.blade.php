@@ -10,7 +10,7 @@
                 <div class="row justify-content-center">
                     <div class="col-xl-6 col-lg-8 col-md-10">
                         <div class="breadcrumb__wrap__content">
-                            <h2 class="title">{{ $category_name->blog_category }}</h2>
+                            <h2 class="title">All Blogs</h2>
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
                                     <li class="breadcrumb-item"><a href="index.html">Home</a></li>
@@ -40,7 +40,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">
-                        @foreach($blog_post as $item)
+                        @foreach($all_blogs as $item)
                             <div class="standard__blog__post">
                                 <div class="standard__blog__thumb">
                                     <a href="{{ route('blog.details', $item->id) }}"><img src="{{ asset($item->blog_image) }}" alt=""></a>
@@ -81,7 +81,7 @@
                             <div class="widget">
                                 <h4 class="widget-title">Recent Blog</h4>
                                 <ul class="rc__post">
-                                    @foreach($blog_post as $item)
+                                    @foreach($all_blogs as $item)
                                         <li class="rc__post__item">
                                             <div class="rc__post__thumb">
                                                 <a href="{{ route('blog.details', $item->id) }}"><img src="{{ asset($item->blog_image) }}" alt=""></a>
@@ -104,12 +104,62 @@
                                 </ul>
                             </div>
 
+                            <div class="widget">
+                                <h4 class="widget-title">Popular Tags</h4>
+                                <ul class="sidebar__tags">
+                                    <li><a href="blog.html">Business</a></li>
+                                    <li><a href="blog.html">Design</a></li>
+                                    <li><a href="blog.html">apps</a></li>
+                                    <li><a href="blog.html">landing page</a></li>
+                                    <li><a href="blog.html">data</a></li>
+                                    <li><a href="blog.html">website</a></li>
+                                    <li><a href="blog.html">book</a></li>
+                                    <li><a href="blog.html">Design</a></li>
+                                    <li><a href="blog.html">product design</a></li>
+                                    <li><a href="blog.html">landing page</a></li>
+                                    <li><a href="blog.html">data</a></li>
+                                </ul>
+                            </div>
+
                         </aside>
                     </div>
                 </div>
             </div>
         </section>
         <!-- blog-area-end -->
+
+
+        <!-- contact-area -->
+        <section class="homeContact homeContact__style__two">
+            <div class="container">
+                <div class="homeContact__wrap">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="section__title">
+                                <span class="sub-title">07 - Say hello</span>
+                                <h2 class="title">Any questions? Feel free <br> to contact</h2>
+                            </div>
+                            <div class="homeContact__content">
+                                <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form</p>
+                                <h2 class="mail"><a href="mailto:Info@webmail.com">Info@webmail.com</a></h2>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="homeContact__form">
+                                <form action="#">
+                                    <input type="text" placeholder="Enter name*">
+                                    <input type="email" placeholder="Enter mail*">
+                                    <input type="number" placeholder="Enter number*">
+                                    <textarea name="message" placeholder="Enter Massage*"></textarea>
+                                    <button type="submit">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- contact-area-end -->
 
     </main>
     <!-- main-area-end -->

@@ -95,6 +95,7 @@ Route::controller(BlogController::class)->group(function () {
 
     Route::get('/blog/details/{id}', 'blogDetails')->name('blog.details');
     Route::get('/category/blog/{id}', 'categoryBlog')->name('category.blog');
+    Route::get('/blog', 'homeBlog')->name('home.blog');
 });
 
 Route::middleware('auth')->group(function () {
