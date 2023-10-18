@@ -3,12 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ProfileController;
+
 use App\Http\Controllers\Home\HomeSliderController;
 use App\Http\Controllers\Home\AboutController;
 use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
-use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Home\FooterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -97,6 +99,13 @@ Route::controller(BlogController::class)->group(function () {
     Route::get('/category/blog/{id}', 'categoryBlog')->name('category.blog');
     Route::get('/blog', 'homeBlog')->name('home.blog');
 });
+
+// Footer All Route
+Route::controller(FooterController::class)->group(function () {
+    Route::get('/footer/setup', 'footerSetup')->name('footer.setup');
+    Route::post('/update/footer/{id}', 'footerUpdate')->name('update.footer');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
