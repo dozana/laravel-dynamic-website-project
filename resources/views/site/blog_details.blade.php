@@ -223,7 +223,7 @@
                                 <h4 class="widget-title">Categories</h4>
                                 <ul class="sidebar__cat">
                                     @foreach($categories as $category)
-                                        <li class="sidebar__cat__item"><a href="blog.html">{{ $category->blog_category }}</a></li>
+                                        <li class="sidebar__cat__item"><a href="{{ route('category.blog', $category->id) }}">{{ $category->blog_category }}</a></li>
                                     @endforeach
                                 </ul>
                             </div>

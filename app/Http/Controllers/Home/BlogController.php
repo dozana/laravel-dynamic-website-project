@@ -128,4 +128,12 @@ class BlogController extends Controller
         $categories = BlogCategory::orderBy('blog_category','ASC')->get();
         return view('site.blog_details', compact('blogs', 'all_blogs', 'categories'));
     }
+
+    public function categoryBlog($id)
+    {
+        $blog_post = Blog::where('blog_category_id', $id)->orderBy('id', 'DESC')->get();
+        $all_blogs = Blog::findOrFail($id);
+        $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+        return view('site.category_blog_details', compact('blog_post', 'all_blogs','categories'));
+    }
 }
