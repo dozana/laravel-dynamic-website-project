@@ -11,6 +11,7 @@ use App\Http\Controllers\Home\PortfolioController;
 use App\Http\Controllers\Home\BlogCategoryController;
 use App\Http\Controllers\Home\BlogController;
 use App\Http\Controllers\Home\FooterController;
+use App\Http\Controllers\Home\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -104,6 +105,11 @@ Route::controller(BlogController::class)->group(function () {
 Route::controller(FooterController::class)->group(function () {
     Route::get('/footer/setup', 'footerSetup')->name('footer.setup');
     Route::post('/update/footer/{id}', 'footerUpdate')->name('update.footer');
+});
+
+// Contact All Route
+Route::controller(ContactController::class)->group(function () {
+    Route::get('/contact', 'contact')->name('contact.me');
 });
 
 

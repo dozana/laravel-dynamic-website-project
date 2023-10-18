@@ -1,3 +1,7 @@
+@php
+    $all_footer = App\Models\Footer::find(1);
+@endphp
+
 <footer class="footer">
     <div class="container">
         <div class="row justify-content-between">
@@ -5,10 +9,10 @@
                 <div class="footer__widget">
                     <div class="fw-title">
                         <h5 class="sub-title">Contact us</h5>
-                        <h4 class="title">+995 123 456</h4>
+                        <h4 class="title">{{ $all_footer->number }}</h4>
                     </div>
                     <div class="footer__widget__text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab beatae commodi consequatur deserunt doloremque eum id impedit inventore libero nam omnis, quae quas quasi soluta temporibus tenetur, velit! Corporis dolor obcaecati rem rerum, vitae voluptatibus.</p>
+                        <p>{{ $all_footer->short_description }}</p>
                     </div>
                 </div>
             </div>
@@ -19,7 +23,7 @@
                         <h4 class="title">GEORGIA</h4>
                     </div>
                     <div class="footer__widget__address">
-                        <p>Tsereteli St. #0, Tbilisi <br> Georgia </p>
+                        <p>{{ $all_footer->address }}</p>
                         <a href="mailto:noreply@dynamic.com" class="mail">noreply@dynamic.com</a>
                     </div>
                 </div>
@@ -33,11 +37,8 @@
                     <div class="footer__widget__social">
                         <p>Lorem ipsum dolor sit amet enim. <br> Etiam ullamcorper.</p>
                         <ul class="footer__social__list">
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
-                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="{{ $all_footer->facebook }}"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="{{ $all_footer->x }}"><i class="fab fa-twitter"></i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,7 +48,7 @@
             <div class="row">
                 <div class="col-12">
                     <div class="copyright__text text-center">
-                        <p>Copyright @ Dynamic Website 2023 All right Reserved</p>
+                        <p>{{ $all_footer->copyright }}</p>
                     </div>
                 </div>
             </div>
