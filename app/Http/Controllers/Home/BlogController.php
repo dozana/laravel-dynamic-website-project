@@ -120,4 +120,12 @@ class BlogController extends Controller
 
         return redirect()->back()->with($notification);
     }
+
+    public function blogDetails($id)
+    {
+        $all_blogs = Blog::latest()->limit(5)->get();
+        $blogs = Blog::findOrFail($id);
+        $categories = BlogCategory::orderBy('blog_category','ASC')->get();
+        return view('site.blog_details', compact('blogs', 'all_blogs', 'categories'));
+    }
 }
