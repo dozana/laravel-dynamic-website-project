@@ -75,6 +75,7 @@ Route::controller(PortfolioController::class)->group(callback: function () {
     Route::get('/delete/portfolio/{id}', 'deletePortfolio')->name('delete.portfolio');
 
     Route::get('/portfolio/details/{id}', 'portfolioDetails')->name('portfolio.details');
+    Route::get('/portfolio', 'homePortfolio')->name('home.portfolio');
 });
 
 // Blog Category All Route
