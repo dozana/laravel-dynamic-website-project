@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\SiteController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 
@@ -24,9 +25,12 @@ use App\Http\Controllers\Home\ContactController;
 |
 */
 
-Route::get('/', function () {
-    return view('site.index');
+
+// Site Route
+Route::controller(SiteController::class)->group(function () {
+    Route::get('/', 'homeSite')->name('home');
 });
+
 
 Route::get('/dashboard', function () {
     return view('admin.index');
