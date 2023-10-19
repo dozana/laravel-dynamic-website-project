@@ -13,4 +13,23 @@ class ContactController extends Controller
     {
         return view('site.contact');
     }
+
+    public function storeMessage(Request $request)
+    {
+        Contact::insert([
+            'name' => $request->name,
+            'email' => $request->email,
+            'subject' => $request->subject,
+            'phone' => $request->phone,
+            'message' => $request->message,
+            'created_at' => Carbon::now(),
+        ]);
+
+        $notification = [
+            'message' => 'Your Message Submitted Successfully',
+            'alert-type' => 'success'
+        ];
+
+        return redirect()->back()->with($notification);
+    }
 }
