@@ -111,6 +111,8 @@ Route::controller(FooterController::class)->group(function () {
 Route::controller(ContactController::class)->group(function () {
     Route::get('/contact', 'contact')->name('contact.me');
     Route::post('/store/message', 'storeMessage')->name('store.message');
+    Route::get('/contact/message', 'contactMessage')->name('contact.message');
+    Route::get('/delete/message/{id}', 'deleteMessage')->name('delete.message');
 });
 
 
