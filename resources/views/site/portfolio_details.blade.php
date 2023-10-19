@@ -1,5 +1,7 @@
 @extends('site.site_master')
 
+@section('title', 'Portfolio Details')
+
 @section('site')
     <!-- main-area -->
     <main>

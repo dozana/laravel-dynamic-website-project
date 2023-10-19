@@ -1,5 +1,7 @@
 @extends('site.site_master')
 
+@section('title', 'Contact Me')
+
 @section('site')
     <!-- main-area -->
     <main>

@@ -1,5 +1,7 @@
 @extends('site.site_master')
 
+@section('title', 'Home')
+
 @section('site')
     <!-- banner-area -->
     @include('site.home_all.home_slide')
